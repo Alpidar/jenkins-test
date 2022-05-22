@@ -20,8 +20,8 @@ public class DemoTest {
         chromeOptions.addArguments("--allow-insecure-localhost");
         chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--disable-gpu");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--disable-dev-shm-usage");
+        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("--disable-dev-shm-usage");
         WebDriver driver = new ChromeDriver(chromeOptions);
 
         driver.get("https://www.google.com");

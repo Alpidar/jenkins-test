@@ -11,9 +11,15 @@ import org.testng.annotations.Test;
 public class DemoTest {
     @Test
     public void search(){
-        WebDriverManager.chromedriver().setup();
+        // WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setHeadless(true);
+        // chromeOptions.setHeadless(true);
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        chromeOptions.addArguments("window-size=1920,1080");
+        chromeOptions.addArguments("--start-maximized");
+        chromeOptions.addArguments("--allow-insecure-localhost");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--disable-gpu");
         WebDriver driver = new ChromeDriver(chromeOptions);
 
         driver.get("https://www.google.com");
